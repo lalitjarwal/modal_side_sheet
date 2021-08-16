@@ -1,16 +1,47 @@
 import 'package:flutter/material.dart';
 
+const _kDefaultWidth = 400.0;
+const _kDefaultThickness = 2.0;
+
+/// An implementaion of Material Side Sheet suggested by Google.
+/// Generally to be used with [Scaffold]'s body property.
+/// #### Example :
+/// ```dart
+/// @override
+///   Widget build(BuildContext context) {
+///     return Scaffold(
+///       body: BodyWithSideSheet(
+///           show: true,
+///           body: Container(
+///             child: Text("My App Body"),
+///           ),
+///           sheetBody: Container(
+///             child: Text("Side Sheet body"),
+///           )),
+///     );
+///   }
+/// ```
+/// See also : https://material.io/components/sheets-side#standard-side-sheet
 class BodyWithSideSheet extends StatelessWidget {
   const BodyWithSideSheet({
     Key? key,
     this.show = false,
     required this.body,
-    this.sheetWidth = 400,
+    this.sheetWidth = _kDefaultWidth,
     required this.sheetBody,
   }) : super(key: key);
+
+  /// App body referred as [Scaffold.body]
   final Widget body;
+
+  /// State of the Side sheet, whether to show side sheet or not.
+  /// Change it using [setState()]
   final bool show;
+
+  /// The width of the Side sheet to be covered by the `sheetBody`
   final double? sheetWidth;
+
+  /// The body of the side sheet. Typically a [Widget].
   final Widget sheetBody;
   @override
   Widget build(BuildContext context) {
@@ -22,14 +53,15 @@ class BodyWithSideSheet extends StatelessWidget {
         Expanded(child: body),
         if (show)
           SizedBox(
-            width: 2.0,
+            width: _kDefaultThickness,
             child: Center(
               child: Container(
-                width: 2.0,
+                width: _kDefaultThickness,
                 decoration: BoxDecoration(
                   border: Border(
                     left: Divider.createBorderSide(context,
-                        color: Theme.of(context).dividerColor, width: 2.0),
+                        color: Theme.of(context).dividerColor,
+                        width: _kDefaultThickness),
                   ),
                 ),
               ),
@@ -49,7 +81,11 @@ class BodyWithSideSheet extends StatelessWidget {
 class _ShrinkableSize extends StatefulWidget {
   const _ShrinkableSize({Key? key, required this.child, required this.show})
       : super(key: key);
+
+  /// The child of the [_ShrinkableSize] widget.
   final Widget child;
+
+  /// Whether to shrink or not.
   final bool show;
   @override
   __ShrinkableSizeState createState() => __ShrinkableSizeState();

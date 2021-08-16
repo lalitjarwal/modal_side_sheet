@@ -28,24 +28,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Material App Bar'),
-        actions: [
-          ElevatedButton(
-              onPressed: () {
-                showModalSideSheet(
-                    context: context,
-                    body: ListView.builder(
-                      itemBuilder: (context, index) {
-                        return ListTile(
-                          leading: Icon(Icons.face),
-                          title: Text("I am on $index index"),
-                          trailing: Icon(Icons.safety_divider),
-                        );
-                      },
-                    ));
-              },
-              child: Text("Show Modal Side Sheet")),
-        ],
+        title: Text('Side Sheet Demo'),
       ),
       body: Builder(
         builder: (context) {
@@ -66,6 +49,22 @@ class _HomeState extends State<Home> {
                         });
                       },
                       child: Text("Show Standard Side Sheet")),
+                  ElevatedButton(
+                      onPressed: () {
+                        showModalSideSheet(
+                            context: context,
+                            ignoreAppBar: false,
+                            body: ListView.builder(
+                              itemBuilder: (context, index) {
+                                return ListTile(
+                                  leading: Icon(Icons.face),
+                                  title: Text("I am on $index index"),
+                                  trailing: Icon(Icons.safety_divider),
+                                );
+                              },
+                            ));
+                      },
+                      child: Text("Show Modal Side Sheet")),
                   Expanded(
                     child: ListView.builder(
                       itemBuilder: (context, index) {
