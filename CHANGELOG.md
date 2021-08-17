@@ -1,3 +1,3 @@
-## 0.0.1
+## [0.0.1] - Aug 17, 2021
 
-* TODO: Describe initial release.
+- initial release.

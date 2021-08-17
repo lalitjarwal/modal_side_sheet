@@ -5,6 +5,7 @@ const _kDefaultThickness = 2.0;
 
 /// An implementaion of Material Side Sheet suggested by Google.
 /// Generally to be used with [Scaffold]'s body property.
+/// Should only to be used within Web or Desktop. 
 /// #### Example :
 /// ```dart
 /// @override

@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 /// does not share a context with the location that `showModalSideSheet` is
 /// originally called from. Use a [StatefulBuilder] or a custom
 /// [StatefulWidget] if the side sheet needs to update dynamically. The
-/// `body` argument can not be null.
+/// `body` argument cannot be null.
 ///
 /// ### Note :
 /// `ignoreAppBar` perameter determines that whether to show side sheet beneath the
@@ -86,10 +86,12 @@ Future<T?> showModalSideSheet<T extends Object?>(
     bool ignoreAppBar = true}) {
   var of = MediaQuery.of(context);
   var platform = Theme.of(context).platform;
-  if (platform == TargetPlatform.android || platform == TargetPlatform.iOS) {
-    width = of.size.width * 0.6;
-  } else {
-    width = of.size.width / 4;
+  if (width == null) {
+    if (platform == TargetPlatform.android || platform == TargetPlatform.iOS) {
+      width = of.size.width * 0.6;
+    } else {
+      width = of.size.width / 4;
+    }
   }
   double exceptionalheight = !ignoreAppBar
       ? Scaffold.of(context).hasAppBar

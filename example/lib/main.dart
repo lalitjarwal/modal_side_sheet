@@ -52,6 +52,7 @@ class _HomeState extends State<Home> {
                   ElevatedButton(
                       onPressed: () {
                         showModalSideSheet(
+                            // width: 700,
                             context: context,
                             ignoreAppBar: false,
                             body: ListView.builder(
@@ -79,6 +80,7 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ),
+            sheetWidth: MediaQuery.of(context).size.width / 4,
             sheetBody: ListView.builder(
               itemBuilder: (context, index) {
                 return ListTile(

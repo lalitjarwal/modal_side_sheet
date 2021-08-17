@@ -1,7 +1,7 @@
 name: modal_side_sheet
-description: A new Flutter package project.
+description: A package to use Material side sheet into your Flutter project.
 version: 0.0.1
-homepage: null
+homepage: https://github.com/lalitjarwal/modal_side_sheet
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
