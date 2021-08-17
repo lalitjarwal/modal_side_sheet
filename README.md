@@ -3,6 +3,12 @@
 A package to use Material side sheet into your Flutter project.
 Learn more about side sheet at [Material.io](https://material.io/components/sheets-side)
 
+## Platform Support
+
+| Android | iOS | MacOS | Web | Linux | Windows |
+| :-----: | :-: | :---: | :-: | :---: | :-----: |
+|   ✔️    | ✔️  |  ✔️   | ✔️  |  ✔️   |   ✔️    |
+
 ## Getting Started
 
 This package comes with two types of side sheets, `Standard side sheet` and `Modal side sheet`.
